@@ -63,7 +63,11 @@ class TestX509Chain
 
                 //break out specific certifcate data
                 Console.WriteLine("Signature Algorithm: {0}", cert2.SignatureAlgorithm.FriendlyName);
-                
+                // Console.WriteLine("Public Key: {0}", cert2.PublicKey.Key.ToXmlString(false));
+                Console.WriteLine("Public Key: {0}{1}", cert2.PublicKey.Key.ToXmlString(false), Environment.NewLine);
+
+
+
                 Console.WriteLine("Element error status length: {0}", element.ChainElementStatus.Length);
                 Console.WriteLine("Element information: {0}", element.Information);
                 Console.WriteLine("Number of element extensions: {0}{1}", element.Certificate.Extensions.Count, Environment.NewLine);
