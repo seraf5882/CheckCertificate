@@ -60,6 +60,10 @@ class TestX509Chain
                 Console.WriteLine("Element issuer name: {0}", element.Certificate.Issuer);
                 Console.WriteLine("Element certificate valid until: {0}", element.Certificate.NotAfter);
                 Console.WriteLine("Element certificate is valid: {0}", element.Certificate.Verify());
+
+                //break out specific certifcate data
+                Console.WriteLine("Signature Algorithm: {0}", cert2.SignatureAlgorithm.FriendlyName);
+                
                 Console.WriteLine("Element error status length: {0}", element.ChainElementStatus.Length);
                 Console.WriteLine("Element information: {0}", element.Information);
                 Console.WriteLine("Number of element extensions: {0}{1}", element.Certificate.Extensions.Count, Environment.NewLine);
@@ -90,7 +94,8 @@ class TestX509Chain
         // catch (WebException e)
         {
             Console.WriteLine("Error:  ");
-            Console.WriteLine (e);
+            Console.WriteLine ( e.Message);
+            
             return;
         }
 
